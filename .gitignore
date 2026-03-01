@@ -1,0 +1,7 @@
+# не тащим кеши/сборки/логи
+nvim/.git/
+nvim/.DS_Store
+nvim/lua/**/.DS_Store
+
+# если вдруг появятся локальные каталоги lazy в конфиге
+nvim/lazy/
