@@ -1,31 +1,35 @@
-# nvim-config
+# nvim-config v1.0
 
-Минимальный конфиг Neovim: Lazy + LSP + CMP + стартовый экран (ASCII) + файловый менеджер (Oil) + onedark (warmer).
+Минимальный конфиг Neovim для учебной/серверной среды с упором на C:
+- onedark (тёмная база), Alpha-меню, lualine
+- Telescope (поиск), Oil (файловые операции)
+- LSP: clangd + bashls
+- nvim-cmp (completion)
+- vim-illuminate (подсветка повторов), trouble.nvim (диагностика)
 
-## Требования
-- Neovim 0.11+ (проверка: `nvim --version`)
-- git
-- Для LSP:
-  - clangd: `sudo apt install clangd`
-  - bash-language-server: `sudo apt install nodejs npm && sudo npm i -g bash-language-server`
+## Установка (быстро)
+1) Склонировать репозиторий в `~/repos/nvim-config`
+2) Сделать симлинк:
+   ```bash
+   rm -rf ~/.config/nvim
+   ln -s ~/repos/nvim-config/nvim ~/.config/nvim
+   ```
+3) Запустить nvim, выполнить :Lazy sync, перезапустить.
 
-## Установка (Linux/macOS)
+## Зависимости (минимум)
 
-1) Сделать бэкап текущего конфига:
-```bash
-mv ~/.config/nvim ~/.config/nvim.bak.$(date +%F_%H%M%S) 2>/dev/null || true
-```
-2) Клонировать репозиторий:
-```bash
-git clone git@github.com:<USER>/<REPO>.git
-```
-3) Установить конфиг:
-```bash
-mkdir -p ~/.config
-cp -a <REPO>/nvim ~/.config/nvim
-```
-4) Первый запуск:
-- Открой nvim
-- Выполни :Lazy sync
-- Перезапусти nvim
+`rg (ripgrep)` — для поиска
 
+`clangd` — для C/C++
+
+`node` + `npm` и `bash-language-server` (опционально, для `bashls`)
+
+Debian:
+
+`apt install ripgrep clangd nodejs npm`
+
+`npm i -g bash-language-server`
+
+## Гайд по использованию
+
+Открыть из меню кнопкой g или командой `:Guide` / `Space h`.
